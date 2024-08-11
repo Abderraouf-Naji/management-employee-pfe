@@ -32,7 +32,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', 'docker-hub-credentials-id') {
-                        sh 'docker push $DOCKER_HUB_REPO/frontend:pfe'
+                        sh 'docker push $DOCKER_HUB_REPO/frontend:1.0'
                     }
                 }
             }
@@ -41,7 +41,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', 'docker-hub-credentials-id') {
-                        sh 'docker push $DOCKER_HUB_REPO/backend:pfe'
+                        sh 'docker push $DOCKER_HUB_REPO/backend:1.0'
                     }
                 }
             }
