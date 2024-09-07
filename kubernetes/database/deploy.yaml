@@ -26,10 +26,10 @@ spec:
           value: "emp"
         - name: MYSQL_PASSWORD
           value: "1234"
-        # volumeMounts:
-        # - name: mongo-persistent-storage
-        #   mountPath: /data/db
-      # volumes:
-      # - name: mongo-persistent-storage
-      #   persistentVolumeClaim:
-      #     claimName: mongo-pvc
+        volumeMounts:
+        - name: mysql-persistent-storage
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: mysql-persistent-storage
+        persistentVolumeClaim:
+          claimName: mysql-pvc
