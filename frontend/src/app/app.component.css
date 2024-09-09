@@ -15,6 +15,40 @@
     z-index: 100;
     font-size: 3rem;
 }
+.navbar-nav {
+    display: flex;
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+    width: 100%; /* Assure que la liste occupe toute la largeur disponible */
+}
+
+.nav-item {
+    margin: 0 5px; /* Espacement entre les éléments */
+}
+
+.nav-item img {
+    margin-right: 5px; /* Espacement entre l'image et les éléments de navigation */
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+    width: 100%; /* Assure que la liste occupe toute la largeur disponible */
+}
+
+.nav-item {
+    margin: 0 5px; /* Espacement entre les éléments */
+}
+
+.nav-item img {
+    margin-right: 5px; /* Espacement entre l'image et les éléments de navigation */
+}
+
+.nav-link {
+    font-size: 25px; /* Taille de la police des éléments de navigation */
+}
+
 
 
 .logout-option {

@@ -1,40 +1,37 @@
 version: '3.8'
-services:
 
+services:
   database:
-    image: "mysql"
+    image: mysql
     container_name: database
     ports:
       - 3306:3306
     environment:
-       MYSQL_ROOT_PASSWORD: 1234
-       MYSQL_DATABASE: emp
-       MYSQL_USER: user
-       MYSQL_PASSWORD: 1234
-
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: emp
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 1234
 
   backend-service:
-    # container_name: najiabderraouf2/backend
     depends_on:
       - database
     build: ./backend
     environment:
       MYSQL_HOST: database
-      MYSQL_PORT: 3306
       MYSQL_DB: emp
-      MYSQL_USER: user 
+      MYSQL_USER: user
       MYSQL_PASS: 1234
     ports:
       - 8080:8080
 
-  frontend:
-    # container_name: najiabderraouf2/frontend
+  frontend-service:
     depends_on:
       - database
       - backend-service
     build: ./frontend
     ports:
       - 4200:80
-    
+
 networks:
   backendNetwork:
+    driver: bridge

@@ -13,7 +13,7 @@ pipeline {
                 script {
                     // Build Docker image for frontend
                     dir('frontend') {
-                        sh 'docker build -t $DOCKER_HUB_REPO/frontend:1.0 .'
+                        sh 'docker build -t $DOCKER_HUB_REPO/frontend:2 .'
                     }
                 }
             }
@@ -23,7 +23,7 @@ pipeline {
                 script {
                     // Build Docker image for backend
                     dir('backend') {
-                        sh 'docker build -t $DOCKER_HUB_REPO/backend:1.0 .'
+                        sh 'docker build -t $DOCKER_HUB_REPO/backend:2 .'
                     }
                 }
             }
@@ -32,7 +32,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', 'docker-hub-credentials-id') {
-                        sh 'docker push $DOCKER_HUB_REPO/frontend:1.0'
+                        sh 'docker push $DOCKER_HUB_REPO/frontend:2'
                     }
                 }
             }
@@ -41,7 +41,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', 'docker-hub-credentials-id') {
-                        sh 'docker push $DOCKER_HUB_REPO/backend:1.0'
+                        sh 'docker push $DOCKER_HUB_REPO/backend:2'
                     }
                 }
             }
@@ -58,13 +58,13 @@ pipeline {
                 }
             }
         }
-        // stage('Deploy to kuberntes (production)') {
+        // stage('Deploy to kuberntes (test)') {
         //     steps {
         //         script {
         //             dir('kubernetes') {
-        //                 sh 'kubectl apply -f frontend/ -n production'
-        //                 sh 'kubectl apply -f backend/ -n production'
-        //                 sh 'kubectl apply -f database/ -n production'
+        //                 sh 'kubectl apply -f frontend/ -n test'
+        //                 sh 'kubectl apply -f backend/ -n test'
+        //                 sh 'kubectl apply -f database/ -n test'
         //             }
                     
         //         }

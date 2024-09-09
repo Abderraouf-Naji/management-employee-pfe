@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: mysql:latest
+        image: mysql:8.0
         ports:
         - containerPort: 3306
         env:
@@ -26,10 +26,3 @@ spec:
           value: "emp"
         - name: MYSQL_PASSWORD
           value: "1234"
-        # volumeMounts:
-        # - name: mongo-persistent-storage
-        #   mountPath: /data/db
-      # volumes:
-      # - name: mongo-persistent-storage
-      #   persistentVolumeClaim:
-      #     claimName: mongo-pvc

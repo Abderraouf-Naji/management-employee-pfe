@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: najiabderraouf2/backend:1.0
+          image: najiabderraouf2/backend:2
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
@@ -31,3 +31,10 @@ spec:
               value: "user"
             - name: MYSQL_PASS
               value: "1234"
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
