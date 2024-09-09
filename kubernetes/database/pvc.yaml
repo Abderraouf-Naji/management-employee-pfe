@@ -8,9 +8,4 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-<<<<<<< HEAD
       storage: 2Gi
-=======
-      storage: 2Gi
-
->>>>>>> origin/master
