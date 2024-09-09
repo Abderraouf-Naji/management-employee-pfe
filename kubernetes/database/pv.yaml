@@ -4,9 +4,8 @@ metadata:
   name: mysql-pv
 spec:
   capacity:
-    storage: 2Gi
+    storage: 1Gi
   accessModes:
     - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
   hostPath:
     path: /data/mysql
