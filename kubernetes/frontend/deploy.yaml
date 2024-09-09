@@ -19,7 +19,7 @@ spec:
           image: najiabderraouf2/frontend:2
           imagePullPolicy: Always
           ports:
-            - containerPort: 4200
+            - containerPort: 80
             resources:
             requests:
               memory: "256Mi"
