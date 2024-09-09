@@ -25,8 +25,3 @@ spec:
         - name: MYSQL_DATABASE
           value: "emp"
         - name: MYSQL_PASSWORD
-<<<<<<< HEAD
-          value: "1234"
-=======
-          value: "1234"
->>>>>>> origin/master
