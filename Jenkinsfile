@@ -46,13 +46,13 @@ pipeline {
                 }
             }
         }
-        stage('Deploy to kuberntes (production)') {
+        stage('Deploy to kuberntes (ingress-nginx)') {
             steps {
                 script {
                     dir('kubernetes') {
-                        sh 'kubectl apply -f frontend/ -n production'
-                        sh 'kubectl apply -f backend/ -n production'
-                        sh 'kubectl apply -f database/ -n production'
+                        sh 'kubectl apply -f frontend/ -n ingress-nginx'
+                        sh 'kubectl apply -f backend/ -n ingress-nginx'
+                        sh 'kubectl apply -f database/ -n ingress-nginx'
                     }
                     
                 }
