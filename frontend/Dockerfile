@@ -26,7 +26,7 @@ COPY . .
 RUN npm run build --prod
 
 # Stage 2: Serve the application with Nginx
-FROM nginx:1.17.1-alpine
+FROM nginx:latest
 COPY --from=build /usr/src/app/dist/frontend /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/nginx.conf
 EXPOSE 80
