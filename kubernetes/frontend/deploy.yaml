@@ -22,4 +22,3 @@ spec:
           ports:
             - containerPort: 4200
               protocol: TCP
-    
