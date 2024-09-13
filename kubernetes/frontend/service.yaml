@@ -5,10 +5,10 @@ metadata:
   namespace: ingress-nginx
 spec:
   selector:
-    app: frontend 
+    app: frontend
   ports:
-    - port: 4200
+    - port: 80
       targetPort: 4200
       protocol: TCP
-      nodePort: 30008
-  type: NodePort  
+  type: ClusterIP
+
