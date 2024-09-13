@@ -9,7 +9,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: empman.192.168.56.128.nip.io
+  - host: employee-management.ste-kusa.com
     http:
       paths:
       - path: /
