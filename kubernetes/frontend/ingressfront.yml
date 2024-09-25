@@ -16,6 +16,14 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: frontend-service
+            name: frontend
             port:
-              number: 4200
+              name: http
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+             name: backend
+             port:
+              name: http
+
