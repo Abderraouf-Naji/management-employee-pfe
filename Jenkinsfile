@@ -46,30 +46,18 @@ pipeline {
                 }
             }
         }
-        stage('Deploy to kuberntes (ingress-nginx)') {
+        stage('Deploy to kuberntes (production)') {
             steps {
                 script {
                     dir('kubernetes') {
-                        sh 'kubectl apply -f frontend/ -n ingress-nginx'
-                        sh 'kubectl apply -f backend/ -n ingress-nginx'
-                        sh 'kubectl apply -f database/ -n ingress-nginx'
+                        sh 'kubectl apply -f frontend/ -n production'
+                        sh 'kubectl apply -f backend/ -n production'
+                        sh 'kubectl apply -f database/ -n production'
                     }
                     
                 }
             }
         }
-        // stage('Deploy to kuberntes (test)') {
-        //     steps {
-        //         script {
-        //             dir('kubernetes') {
-        //                 sh 'kubectl apply -f frontend/ -n test'
-        //                 sh 'kubectl apply -f backend/ -n test'
-        //                 sh 'kubectl apply -f database/ -n test'
-        //             }
-                    
-        //         }
-        //     }
-        // }
     }
 
     post {
