@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend-deployment
+  namespace: ingress-nginx
   labels:
     app: frontend
 spec:
@@ -19,4 +20,5 @@ spec:
           image: najiabderraouf2/frontend:2
           imagePullPolicy: Always
           ports:
-            - containerPort: 80
+            - containerPort: 4200
+              protocol: TCP

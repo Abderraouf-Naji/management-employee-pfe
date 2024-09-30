@@ -28,7 +28,7 @@ public class EmployeeController {
 	private EmployeeRepository employeeRepository;
 	
 	//get all data
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = {"http://192.168.56.128:30008", "http://192.168.56.128:30007"})
 	@GetMapping("/employees")
 	public List <Employee> getAllEmployees(){
 		return employeeRepository.findAll();
@@ -37,7 +37,7 @@ public class EmployeeController {
 	
 	
 	//create 
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = {"http://192.168.56.128:30008", "http://192.168.56.128:30007"})
 	@PostMapping("/employees")
 	public Employee createEmployee(@RequestBody Employee employee)
 	{
@@ -46,7 +46,7 @@ public class EmployeeController {
 	
 	
 	// get data by id 
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = {"http://192.168.56.128:30008", "http://192.168.56.128:30007"})
 	@GetMapping("/employees/{id}")
 	public ResponseEntity<Employee> getByID(@PathVariable Long id) {
 		Employee employee = employeeRepository.findById(id).
@@ -56,7 +56,7 @@ public class EmployeeController {
 	
 	
 	//update data 
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = {"http://192.168.56.128:30008", "http://192.168.56.128:30007"})
 	@PutMapping ("/employees/{id}")
 	public ResponseEntity<Employee> updateEmployeeByID(@PathVariable Long id, @RequestBody Employee employeeDetails){
 		Employee employee = employeeRepository.findById(id).
@@ -78,7 +78,7 @@ public class EmployeeController {
 	
 	
 	
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = {"http://192.168.56.128:30008", "http://192.168.56.128:30007"})
 	@DeleteMapping("/employees/{id}")
 	public ResponseEntity <Map<String, Boolean> >deleteEmployee(@PathVariable Long id){
 		

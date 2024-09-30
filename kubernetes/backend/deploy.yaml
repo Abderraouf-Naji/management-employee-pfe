@@ -22,7 +22,7 @@ spec:
             - containerPort: 8080
           env:
             - name: MYSQL_HOST
-              value: "mysql-service"
+              value: "mysql"
             - name: MYSQL_PORT
               value: "3306"
             - name: MYSQL_DB
@@ -37,8 +37,4 @@ spec:
               cpu: "250m"
             limits:
               memory: "512Mi"
-<<<<<<< HEAD
               cpu: "500m"
-=======
-              cpu: "500m"
->>>>>>> origin/master
